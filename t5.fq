@@ -1,0 +1,7 @@
+GETQ 1
+@inicio
+H q0
+MEDIR q0, c0
+PRINT c0
+JZ c0, @inicio ; Si el qubit colapsa en 0, volver a intentar hasta que salga 1
+DEBUG

@@ -1,0 +1,12 @@
+; Estado de Bell
+
+GETQ 2
+H q0
+CNOT q0, q1
+DEBUG
+MEDIR q0, c0
+DEBUG
+MEDIR q1, c1
+PRINT c0
+PRINT c1
+DEBUG

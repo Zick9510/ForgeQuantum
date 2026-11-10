@@ -1,0 +1,9 @@
+GETQ 1
+@Inicio
+X q0         ; q0 = 1      | q0 = 0
+MEDIR q0, c0 ; c0 = 1      | c0 = 0
+PRINT c0     ; c0 : 1      | c0 : 0
+JZ c0, @Fin  ;             | JZ c0, @Fin
+JMP @Inicio  ; JMP @Inicio |
+@Fin
+DEBUG

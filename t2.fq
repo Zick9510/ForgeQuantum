@@ -1,0 +1,10 @@
+GETQ 2
+X q0
+
+SWAP q0, q1
+
+MEDIR q0, c0
+MEDIR q1, c1
+
+PRINT c0
+PRINT c1

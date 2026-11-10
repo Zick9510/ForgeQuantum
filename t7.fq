@@ -1,0 +1,9 @@
+GETQ 2
+
+H q0
+CNOT q0, q1
+
+DEBUG
+
+MEDIR q0, c0
+DEBUG

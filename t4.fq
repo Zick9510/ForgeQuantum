@@ -1,0 +1,8 @@
+GETQ 3
+H q0
+H q1
+; Si q0 y q1 son 1, voltea q2
+CCX q0, q1, q2
+
+RZ q2, 33d
+DEBUG

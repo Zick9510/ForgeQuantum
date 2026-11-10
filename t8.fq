@@ -1,0 +1,38 @@
+; 1. Preparar el estado a teletransportar
+X q0
+
+; 2. Crear el par de Bell entre q1 y q2
+H q1
+CNOT q1, q2
+
+; 3. Operaciones de A (q0 y q1)
+CNOT q0, q1
+H q0
+
+; 4. A mide sus qubits
+MEDIR q0, c0
+MEDIR q1, c1
+
+; 5. Corrección condicional de B
+; Si c1 es 1, B aplica una X
+JO c1, @APPLYX
+@CONTINUE1
+
+; Si c0 es 1, B aplica una Z
+JO c0, @APPLYZ
+@CONTINUE2
+
+; 6. Verificación
+DEBUG
+JMP @END
+
+; Subrutinas de corrección
+@APPLYX
+X q2
+JMP @CONTINUE1
+
+@APPLYZ
+Z q2
+JMP @CONTINUE2
+
+@END
